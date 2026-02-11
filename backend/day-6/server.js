@@ -3,7 +3,7 @@ const app = require('./src/app');
 const mongoose = require('mongoose');
 
 // function connectTOdb(){
-//     mongoose.connect("mongodb+srv://keshav:iETHCQtfSjEL1JHl@cluster0.2ftdc2p.mongodb.net/day-6")
+//     mongoose.connect(process.env.MONGO_URI)
 //     .then(()=>{
 //         console.log("Connected to DB");
 //     })
@@ -12,7 +12,7 @@ const mongoose = require('mongoose');
 // connectTOdb();
 
 function connectToDb() {
-    mongoose.connect("mongodb+srv://keshav:iETHCQtfSjEL1JHl@cluster0.2ftdc2p.mongodb.net/day-6")
+    mongoose.connect(process.env.MONGO_URI)
         .then(()=>{
     console.log("Connected to DB");
 })
