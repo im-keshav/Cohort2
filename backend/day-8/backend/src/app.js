@@ -1,8 +1,11 @@
 const express = require("express")
 
 const NoteModel = require("./models/note.model")
+const cors = require("cors")
+
 const app=express()
 app.use(express.json())
+app.use(cors())
 
 app.post("/api/note",async (req ,  res)=>{
     const {title,description}= req.body
