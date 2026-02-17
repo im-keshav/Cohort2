@@ -1,4 +1,5 @@
 const app = require('./src/app');
+require("dotenv").config()
 
 const mongoose = require('mongoose');
 

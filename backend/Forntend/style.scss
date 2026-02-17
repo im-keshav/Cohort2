@@ -1,0 +1,29 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+}
+body{
+    background-color: #232323;
+} 
+.mouse-follower{
+    height: 30px;
+    width: 30px;
+    
+    border-radius: 50%;
+    position: absolute;
+    border: 2px solid whitesmoke;
+}
+
+.circle{
+    height: 5px;
+    width: 5px;
+    border-radius: 50%; 
+    background-color: red;
+    transform: translate(-50%,-50%);   
+ }
