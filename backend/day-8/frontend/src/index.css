@@ -31,3 +31,36 @@ html{
   color: white;
   margin: 1rem;
 }
+
+.note-create-form{
+  padding-inline: 3rem;
+  padding-block: 1rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+  background-color: rgb(48, 47, 47);
+
+}
+
+.note-create-form input{
+  padding: 0.1rem 1rem;
+  border-radius: 0.5rem;
+  border: none;
+
+
+}
+
+.note-create-form button{
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  background-color: rgb(105, 105, 246);
+  color: azure;
+
+}
+.note-create-form button:active{
+  background-color: rgb(105, 105, 246,0.8);
+  scale: 0.95;
+}
+
