@@ -6,7 +6,7 @@ function App() {
 
 
   function fetchCard(){
-    axios.get("http://localhost:3000/api/card")
+    axios.get("https://cohort2-2.onrender.com//api/card")
    .then((res)=>{
     setCard(res.data.card)
    
@@ -23,7 +23,7 @@ fetchCard()
     e.preventDefault()
     const {image_URL,heading,description} = e.target.elements
 
-    axios.post("http://localhost:3000/api/card",{
+    axios.post("https://cohort2-2.onrender.com//api/card",{
       image_URL:image_URL.value,
       heading:heading.value,
       description:description.value,
@@ -39,7 +39,7 @@ fetchCard()
     
   
   function handleDelete(id){
-    axios.delete(`http://localhost:3000/api/card/${id}`)
+    axios.delete(`https://cohort2-2.onrender.com//api/card/${id}`)
     .then((res)=>{
       console.log(res.data);
       fetchCard()
@@ -52,7 +52,7 @@ fetchCard()
     const newDescription = prompt("Enter new Description")
     
 
-   axios.patch(`http://localhost:3000/api/card/${id}`,{
+   axios.patch(`https://cohort2-2.onrender.com//api/card/${id}`,{
      image_URL:newImage_URL,
      heading:newHeading,
      description:newDescription
