@@ -7,6 +7,7 @@ const identifyUser = require("../middlewares/auth.middleware")
 
 
 
+
 // "POST/api/posts [protected]"
 // -req.body={caption,image-file}
 postRouter.post("/",upload.single("image"),identifyUser,postController.createPostController)

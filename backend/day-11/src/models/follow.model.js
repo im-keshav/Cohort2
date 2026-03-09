@@ -12,10 +12,6 @@ const followSchema = new mongoose.Schema({
         ref:"users",
         required:[true,"Followee is required"]
     },
-    
-
-    
-
 },{
     timestamps:true
 })

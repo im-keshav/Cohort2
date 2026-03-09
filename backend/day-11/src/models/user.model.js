@@ -22,7 +22,7 @@ const UserSchema = new mongoose.Schema({
         type:String,
         default:"https://ik.imagekit.io/3ttv4oxy3/img.webp", 
     },
-   
+    
 
 })
 
