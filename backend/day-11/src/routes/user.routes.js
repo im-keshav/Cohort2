@@ -11,8 +11,6 @@ const userRouter = express.Router()
 // "@access Private"
 userRouter.post("/follow/:userid",identifyUser
     ,UserController.followUserController)
-    
-
 
 
 module.exports=userRouter;
