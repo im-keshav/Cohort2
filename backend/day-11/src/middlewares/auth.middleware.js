@@ -6,7 +6,7 @@ async function identifyUser(req,res,next){
     const token = req.cookies.token
 
     if(!token){
-        return res.stauts(401).json({
+        return res.status(401).json({
             message:"Token not provided , Unauthorized access"
         })
     }
@@ -17,7 +17,7 @@ async function identifyUser(req,res,next){
         decoded = jwt.verify(token,process.env.JWT_SECRET)
     }
     catch(err){
-        return res.stauts(401).json({
+        return res.status(401).json({
             message:"user not authorized token"
         })
     }
@@ -27,5 +27,7 @@ async function identifyUser(req,res,next){
     next()
 
 }
+
+// "req.user"
 
 module.exports=identifyUser
