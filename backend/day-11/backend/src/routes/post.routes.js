@@ -1,33 +1,59 @@
-const express = require("express")
+const express = require("express");
 
-const postRouter = express.Router()
-const postController = require("../controller/post.controller")
-const multer = require("multer")
-const upload = multer({storage:multer.memoryStorage()})
-const identifyUser =require("../middlewares/auth.middleware")
-
+const postRouter = express.Router();
+const postController = require("../controllers/post.controller");
+const multer = require("multer");
+const upload = multer({ storage: multer.memoryStorage() });
+const identifyUser = require("../middlewares/auth.middleware");
 
 /**
- * Post/api/posts [protected]
- * req.body = {caption,image-file}
+ * @route POST/api/posts [protected]
+ * @description req.body = {caption,image-file}
  */
 
-postRouter.post("/",upload.single("image"),identifyUser,postController.createPostController)
+postRouter.post(
+  "/",
+  upload.single("image"),
+  identifyUser,
+  postController.createPostController,
+);
 
 /**
- * GET/api/posts/ [protected]
-*/
-postRouter.get("/",identifyUser,postController.getPostController)
+ * @route GET/api/posts/ [protected]
+ * @description returns all posts of users that are followed by the user that the request come form
+ */
+postRouter.get(
+  "/", 
+  identifyUser, 
+  postController.getPostController
+);
 
 /**
- * GET/api/posts/details/:postId 
- * return an detail about specific post with the id.
- *  also check whether the post belongs to the user that the request come form
-*/
+ * @route GET/api/posts/details/:postId
+ * @description returns an detail about specific post with the id.
+ * also check whether the post belongs to the user that the request come form
+ */
 
-postRouter.get("/details/:postId",identifyUser,postController.getPostDetailsController)
+postRouter.get(
+  "/details/:postId",
+  identifyUser,
+  postController.getPostDetailsController,
+);
+
+
+/**
+ * @route POST /api/posts/like/:postId [protected]
+ * @description like a post with he id provided in the request params.
+ */
+
+postRouter.post("/like/:postId",identifyUser,
+  postController.likePostController,
+)
 
 
 
 
-module.exports = postRouter
+
+
+
+module.exports = postRouter;
