@@ -1,0 +1,19 @@
+import { BrowserRouter, Routes, Route } from "react-router"
+import Login from "./feature/auth/pages/Login"
+import Register from "./feature/auth/pages/Register"
+
+function AppRouter() {
+    return( 
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={
+                <h1>Welcome to then App</h1>
+                }/>
+                <Route path="/login" element={<Login/>}/>
+                <Route path="/register" element={<Register/>}/>
+            </Routes>
+        </BrowserRouter>
+    )
+}
+
+export default AppRouter
