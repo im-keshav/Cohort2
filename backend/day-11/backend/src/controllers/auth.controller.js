@@ -65,7 +65,8 @@ async function loginController (req,res){
     
     const user=await userModel.findOne({
         $or:[{email:email},{username:username}] 
-    })
+    }).select("+password")
+
     if(!user){
         return res.status(401).json({
             message:"invalid credentials"

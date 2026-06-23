@@ -30,10 +30,17 @@ main {
   background-color: #0236c4;
   color: whitesmoke;
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.form-container button:hover {
+  background-color: #022ebf;
 }
 .form-container .toggleAuthForm {
   color: #028ac4;
   text-decoration: none;
   cursor: pointer;
   padding-left: 0.5rem;
+}
+.form-container button:active {
+  transform: scale(0.95);
 }/*# sourceMappingURL=form.css.map */

@@ -10,7 +10,7 @@ const LoginForm = () => {
   const [password, setPassword] = useState('')
 
 
-const {handleLogin,loading} = useAuth()
+const {user,handleLogin,loading} = useAuth()
 const navigate = useNavigate()
   
 if(loading){

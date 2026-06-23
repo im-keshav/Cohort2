@@ -1,5 +1,6 @@
 import { createContext, useState } from "react";
-import { login, register} from "./services/auth.api"
+
+
 export const AuthContext = createContext()
 
 
@@ -9,43 +10,43 @@ export function AuthProvider({children}){
     
 
 
-    const handleLogin = async(username,password)=>{
-        setLoading(true)
-        try{
-            const response = await login(username,password)
-            setUser(response.user)
-            return response
-        }
-        catch(err){
-            console.log(err)
-            throw err
-        }
-        finally{
-            setLoading(false)
-        }
+    // const handleLogin = async(username,password)=>{
+    //     setLoading(true)
+    //     try{
+    //         const response = await login(username,password)
+    //         setUser(response.user)
+    //         return response
+    //     }
+    //     catch(err){
+    //         console.log(err)
+    //         throw err
+    //     }
+    //     finally{
+    //         setLoading(false)
+    //     }
         
-    }
+    // }
 
-    const handleRegister = async(username, email, password)=>{
-        setLoading(true)
-        try {
-            const response = await register(username, email, password)
-            setUser(response.user)
-            return response
+    // const handleRegister = async(username, email, password)=>{
+    //     setLoading(true)
+    //     try {
+    //         const response = await register(username, email, password)
+    //         setUser(response.user)
+    //         return response
             
-        } catch (error) {
-            console.log(error)
-            throw error
-        }
-        finally{
-            setLoading(false)
-        }
-    }
+    //     } catch (error) {
+    //         console.log(error)
+    //         throw error
+    //     }
+    //     finally{
+    //         setLoading(false)
+    //     }
+    // }
 
 
    
     return(
-        <AuthContext.Provider value={{user, loading, handleLogin, handleRegister}}>
+        <AuthContext.Provider value={{user, loading, setUser,setLoading}}>
             {children}
         </AuthContext.Provider>
     )

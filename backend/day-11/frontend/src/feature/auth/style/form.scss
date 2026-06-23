@@ -27,6 +27,10 @@ gap: 1rem;
         background-color: #0236c4;
         color: whitesmoke;
         cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        &:hover{
+            background-color: #022ebf;
+        }
     }
     .toggleAuthForm{
         color: #028ac4;
@@ -35,6 +39,9 @@ gap: 1rem;
         padding-left: 0.5rem;
     }
     
+    button:active{
+        transform: scale(0.95);
+    }
      
 
 }
